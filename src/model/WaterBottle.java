@@ -40,5 +40,66 @@ public class WaterBottle
 		this.insulated = insulated;
 		
 	}
+	
+	public String getColor()
+	{
+		return color;
+	}
+	
+	public String getLidType()
+	{
+		return lidType;
+	}
+	
+	public String getMaterial()
+	{
+		return material;
+	}
+	
+	public int getFluidOz()
+	{
+		return fluidOz;
+	}
+	
+	public boolean getInsulated()
+	{
+		return insulated;
+	}
+	
+	public void setColor(String color)
+	{
+		this.color = color;
+	}
+	
+	public void setLidType(String lidType)
+	{
+		this.lidType = lidType;
+	}
+	
+	public void setMaterial(String material)
+	{
+		this.material = material;
+	}
+	
+	public void setFluidOz(int fluidOz)
+	{
+		this.fluidOz = fluidOz;
+	}
+	
+	public void setinsulated(boolean insulated)
+	{
+		this.insulated = insulated;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
