@@ -8,6 +8,7 @@ public class IfController
 {
 	private WaterBottle hydroFlask;
 	private WaterBottle userWaterBottle;
+	private String userInput;
 	
 	
 	/**
@@ -22,6 +23,7 @@ public class IfController
 	/**
 	 * This is where the program starts calling methods to run the program.
 	 */
+	
 	public void start()
 	{
 		String color = JOptionPane.showInputDialog(null, "What is the color of your water bottle?");
@@ -40,6 +42,10 @@ public class IfController
 		
 		
 		String userInput = JOptionPane.showInputDialog(null, "How many fluid ounces are in your water bottle?");
+		while(!validInt(userInput))
+		{
+			userInput = JOptionPane.showInputDialog(null, "got to do right answer");
+		}
 		int fluidOz = 0;
 		if (validInt(userInput))
 		{
@@ -65,27 +71,7 @@ public class IfController
 		
 	}
 	
-	private void loopy()
-	{
-		//define a variable before the loop
-		boolean isFinished = false;
-		int someCount = 0;
-		
-		while (!isFinished)
-		{
-			JOptionPane.showMessageDialog(null, someCount);
-			
-			
-			++someCount;
-			someCount += 1;
-			
-			if (someCount > 10)
-			{
-				isFinished = true;
-			}
-			
-		}
-	}
+	
 			
 	public boolean validInt(String maybeInt)
 	{
