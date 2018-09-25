@@ -54,6 +54,37 @@ public class IfController
 		boolean insulated = false;
 		insulated = Boolean.parseBoolean(userInput2);
 		userWaterBottle.setinsulated(insulated);
+		if (insulated = false)
+		{
+			JOptionPane.showMessageDialog(null, "Your water bottle is not insulated.");
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Your water bottle is isulated." );
+		}
+		
+	}
+	
+	private void loopy()
+	{
+		//define a variable before the loop
+		boolean isFinished = false;
+		int someCount = 0;
+		
+		while (!isFinished)
+		{
+			JOptionPane.showMessageDialog(null, someCount);
+			
+			
+			++someCount;
+			someCount += 1;
+			
+			if (someCount > 10)
+			{
+				isFinished = true;
+			}
+			
+		}
 	}
 			
 	public boolean validInt(String maybeInt)
@@ -71,7 +102,6 @@ public class IfController
 			JOptionPane.showMessageDialog(null, "You need to type in a whole number");
 		}
 		
-		return isValid;
-		
+		return isValid;	
 	}
 }
