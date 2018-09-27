@@ -25,6 +25,16 @@ public class IfController
 	
 	public void start()
 	{
+	
+		uselessQuestion();
+		
+		//add for loop here
+		usefulQuestions();
+		
+	}
+	
+	public void uselessQuestion()
+	{
 		boolean answer = true;
 		while (answer)
 		{
@@ -38,10 +48,15 @@ public class IfController
 				answer = false;
 			}
 		}
-			
-			
-		
+	}	
+	
+	public void usefulQuestions()
+	{
 		String color = JOptionPane.showInputDialog(null, "What is the color of your water bottle?");
+		while (color == null || color.equals(""))
+		{
+			color = JOptionPane.showInputDialog(null, "Type in a color");
+		}
 		userWaterBottle.setColor(color);
 		JOptionPane.showMessageDialog(null, "Your water bottle has a beatiful " + userWaterBottle.getColor() + " color.");
 		
@@ -71,22 +86,34 @@ public class IfController
 		JOptionPane.showMessageDialog(null, "Your water bottle holds " + userWaterBottle.getFluidOz() + " fluid ounces");
 		
 		
-		String userInput2 = JOptionPane.showInputDialog(null, "Is your water bottle insulated?");
-		answer
+		
+		
 		//boolean insulated = true;
 		//insulated = Boolean.parseBoolean(userInput2);
 		//userWaterBottle.setinsulated(insulated);
-		if (answer)
+		boolean insulatedTest = true;
+		while(insulatedTest)
 		{
-			JOptionPane.showMessageDialog(null, "Your water bottle is not insulated.");
+			String userInput2 = JOptionPane.showInputDialog(null, "Is your water bottle insulated?");
+			if (userInput2.equals("Yes") || userInput2.equals("yes"))
+			{
+				JOptionPane.showMessageDialog(null, "Your water bottle is insulated.");
+				userWaterBottle.setInsulated(" ");
+				insulatedTest = false;
+			}
+			else if(userInput2.equals("No") || userInput2.equals("no"))
+			{
+				JOptionPane.showMessageDialog(null, "Your water bottle is not insulated." );
+				userWaterBottle.setInsulated(" not ");
+				insulatedTest = false;
+			}
+			else
+			{
+				JOptionPane.showInputDialog(null, "Please answer with 'Yes' or 'No'");
+				insulatedTest = true;
+			}
 		}
-		else
-		{
-			JOptionPane.showMessageDialog(null, "Your water bottle is isulated." );
-		}
-		
 	}
-	
 	
 			
 	public boolean validInt(String maybeInt)

@@ -6,7 +6,7 @@ public class WaterBottle
 	private String lidType;
 	private String material;
 	private int fluidOz;
-	private boolean insulated;
+	private String insulated;
 	
 	
 	/**
@@ -20,7 +20,7 @@ public class WaterBottle
 		this.lidType = "Straw";
 		this.material = "Metal";
 		this.fluidOz = 40;
-		this.insulated = true;
+		this.insulated = "";
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class WaterBottle
 	 * @param fluidOz Tells the fluid ounces inside the water bottle
 	 * @param insulated Describes the water bottle as either insulated or not
 	 */
-	public WaterBottle(String color, String lidType, String material, int fluidOz, boolean insulated)
+	public WaterBottle(String color, String lidType, String material, int fluidOz, String insulated)
 	{
 		this.color = color;
 		this.lidType = lidType;
@@ -61,7 +61,7 @@ public class WaterBottle
 		return fluidOz;
 	}
 	
-	public boolean getInsulated()
+	public String getInsulated()
 	{
 		return insulated;
 	}
@@ -86,12 +86,23 @@ public class WaterBottle
 		this.fluidOz = fluidOz;
 	}
 	
-	public void setinsulated(boolean insulated)
+	public void setInsulated(String insulated)
 	{
 		this.insulated = insulated;
 	}
 	
-	
+	public String toString()
+	{
+		String description = "Your water bottle is " + color + " colored. ";
+		description += "Your water bottle also has a " + lidType + " lid. ";
+		description += "Your water bottle is made out of " + material + ". ";
+		description += "Your water bottle's volume is " + fluidOz + " ounces. ";
+		description += "Your water bottle is" + insulated + "insulated.";
+				
+				 
+		return description;	
+				
+	}
 	
 	
 	
