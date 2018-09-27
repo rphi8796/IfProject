@@ -6,9 +6,8 @@ import javax.swing.JOptionPane;
 
 public class IfController
 {
-	private WaterBottle hydroFlask;
+	//private WaterBottle hydroFlask;
 	private WaterBottle userWaterBottle;
-	private String userInput;
 	
 	
 	/**
@@ -16,7 +15,7 @@ public class IfController
 	 */
 	public IfController()
 	{
-		hydroFlask = new WaterBottle("Grey", "Straw", "Metal", 40, true);
+		//hydroFlask = new WaterBottle("Grey", "Straw", "Metal", 40, true);
 		userWaterBottle = new WaterBottle();
 	}
 	
@@ -26,6 +25,22 @@ public class IfController
 	
 	public void start()
 	{
+		boolean answer = true;
+		while (answer)
+		{
+			String userInput = JOptionPane.showInputDialog(null, "Would you like an annoying pop up to ask you useless questions?");
+			if (userInput.equals("Yes") || userInput.equals("yes"))
+			{
+				answer = true;
+			}
+			else
+			{
+				answer = false;
+			}
+		}
+			
+			
+		
 		String color = JOptionPane.showInputDialog(null, "What is the color of your water bottle?");
 		userWaterBottle.setColor(color);
 		JOptionPane.showMessageDialog(null, "Your water bottle has a beatiful " + userWaterBottle.getColor() + " color.");
@@ -57,10 +72,11 @@ public class IfController
 		
 		
 		String userInput2 = JOptionPane.showInputDialog(null, "Is your water bottle insulated?");
-		boolean insulated = false;
-		insulated = Boolean.parseBoolean(userInput2);
-		userWaterBottle.setinsulated(insulated);
-		if (insulated = false)
+		answer
+		//boolean insulated = true;
+		//insulated = Boolean.parseBoolean(userInput2);
+		//userWaterBottle.setinsulated(insulated);
+		if (answer)
 		{
 			JOptionPane.showMessageDialog(null, "Your water bottle is not insulated.");
 		}
