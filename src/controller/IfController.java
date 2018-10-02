@@ -2,12 +2,16 @@ package controller;
 
 import model.WaterBottle;
 
+import java.util.Random;
+
 import javax.swing.JOptionPane;
 
 public class IfController
 {
 	//private WaterBottle hydroFlask;
 	private WaterBottle userWaterBottle;
+	private Random generator;
+	private int sides;
 	
 	
 	/**
@@ -28,8 +32,11 @@ public class IfController
 	
 		uselessQuestion();
 		
-		//add for loop here
-		usefulQuestions();
+		for (int x = 3; x > 0; x --)
+		{
+			usefulQuestions();
+		}
+		
 		
 	}
 	
@@ -74,7 +81,7 @@ public class IfController
 		String userInput = JOptionPane.showInputDialog(null, "How many fluid ounces are in your water bottle?");
 		while(!validInt(userInput))
 		{
-			userInput = JOptionPane.showInputDialog(null, "got to do right answer");
+			userInput = JOptionPane.showInputDialog(null, "Please enter an integer");
 		}
 		int fluidOz = 0;
 		if (validInt(userInput))
@@ -111,6 +118,54 @@ public class IfController
 			{
 				JOptionPane.showInputDialog(null, "Please answer with 'Yes' or 'No'");
 				insulatedTest = true;
+			}
+		}
+	}
+	
+	public void diceGame()
+	{
+		boolean playAgain = true;
+		String playAgainInput = JOptionPane.showInputDialog(null, "Would you like to try and guess what a dice roll was equal to? " + "(Hint: answer with yes or no. Any other answer assumes no");
+		if (playAgainInput.equals("Yes") || playAgainInput.equals("yes"))
+		{
+			playAgain = true;
+		}
+		else
+		{
+			playAgain = false;
+		}
+
+		while (playAgain)
+		{
+			int TRIES = 2;
+			int dice = (int) (Math.random() * 6 + 1);
+			int i = 1;
+			while ((i <= 2))
+			{
+				String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled " + dice);
+				// make sure this doesn't count as a guess
+				while (!validInt(userInput))
+				{
+					userInput = JOptionPane.showInputDialog(null, "Enter a whole number between one and six." );
+				}
+
+				if (validInt(userInput))
+				{
+					int guess = Integer.parseInt(userInput);
+					if (guess == dice)
+					{
+						JOptionPane.showMessageDialog(null, "You are correct the dice rolled a " + dice);
+						
+					}
+					else if ((guess != dice) || (i <= TRIES))
+					{
+						JOptionPane.showMessageDialog(null, "That guess wasn't correct but guess again");
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Nice try");
+					}
+				}
 			}
 		}
 	}
