@@ -1,17 +1,15 @@
 package controller;
 
 import model.WaterBottle;
-
-import java.util.Random;
-
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
+
 
 public class IfController
 {
 	//private WaterBottle hydroFlask;
 	private WaterBottle userWaterBottle;
-	private Random generator;
-	private int sides;
+
 	
 	
 	/**
@@ -137,10 +135,10 @@ public class IfController
 
 		while (playAgain)
 		{
-			int TRIES = 2;
+			final int TRIES = 2;
 			int dice = (int) (Math.random() * 6 + 1);
 			int i = 1;
-			while ((i <= 2))
+			while ((i <= TRIES))
 			{
 				String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled " + dice);
 				// make sure this doesn't count as a guess
@@ -166,11 +164,36 @@ public class IfController
 						JOptionPane.showMessageDialog(null, "Nice try");
 					}
 				}
+				i += 1;
 			}
 		}
 	}
 	
 			
+	public void createArrayList()
+	{
+		//starts an array list as an integer type
+		ArrayList<Integer> fib = new ArrayList<Integer>();
+		fib.add(0);
+		fib.add(33);
+		fib.add(1);
+		
+		for (int count = 0; count < 10; count++)
+		{
+			int firVal = 0;
+			int secVal = 1;
+			
+			int nextVal = fib[1] + fib[0];
+			
+			
+			
+			firVal++;
+			secVal++;
+			
+		}
+		
+	}
+	
 	public boolean validInt(String maybeInt)
 	{
 		
