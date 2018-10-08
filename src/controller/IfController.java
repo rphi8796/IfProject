@@ -172,25 +172,27 @@ public class IfController
 			
 	public void createArrayList()
 	{
-		//starts an array list as an integer type
 		ArrayList<Integer> fib = new ArrayList<Integer>();
 		fib.add(0);
 		fib.add(33);
 		fib.add(1);
-		
-		for (int count = 0; count < 10; count++)
+		fib.remove(1);
+				
+		int count = 0;
+		int firVal = 0;
+		int secVal = 1;
+		while(count < 10)
 		{
-			int firVal = 0;
-			int secVal = 1;
+				
+			int nextVal = fib.get(firVal) + fib.get(secVal);	
+			fib.add(nextVal);
+			firVal += 1;
+			secVal += 1;
+			count += 1;
 			
-			int nextVal = fib[1] + fib[0];
 			
-			
-			
-			firVal++;
-			secVal++;
-			
-		}
+		}	
+		System.out.println(fib);
 		
 	}
 	
