@@ -4,7 +4,6 @@ import model.WaterBottle;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
-
 public class IfController
 {
 	//private WaterBottle hydroFlask;
@@ -30,7 +29,7 @@ public class IfController
 	
 		uselessQuestion();
 		
-		for (int x = 3; x > 0; x --)
+		for (int x = 2; x > 0; x --)
 		{
 			usefulQuestions();
 		}
@@ -38,6 +37,11 @@ public class IfController
 		
 	}
 	
+	
+	/**
+	 * This method will ask the user a useless question until
+	 * the user does not enter yes
+	 */
 	public void uselessQuestion()
 	{
 		boolean answer = true;
@@ -55,6 +59,12 @@ public class IfController
 		}
 	}	
 	
+	
+	/**
+	 * This is the method that will ask questions about the
+	 * person's water bottle and then tell them about their
+	 * water bottle
+	 */
 	public void usefulQuestions()
 	{
 		String color = JOptionPane.showInputDialog(null, "What is the color of your water bottle?");
@@ -120,6 +130,13 @@ public class IfController
 		}
 	}
 	
+	
+	/**
+	 * This will ask the user if they would like to guess
+	 * what a dice was equal to. It will give them two tries to guess
+	 * the correct value.
+	 * still need work
+	 */
 	public void diceGame()
 	{
 		boolean playAgain = true;
@@ -169,7 +186,11 @@ public class IfController
 		}
 	}
 	
-			
+	
+	/**
+	 * This will print the fibonacci sequence but I am still trying
+	 * to get the text to wrap
+	 */
 	public void createArrayList()
 	{
 		ArrayList<Integer> fib = new ArrayList<Integer>();
@@ -177,23 +198,26 @@ public class IfController
 		fib.add(33);
 		fib.add(1);
 		fib.remove(1);
-				
+
 		int count = 0;
 		int firVal = 0;
 		int secVal = 1;
-		while(count < 10)
+		while (count < 10)
 		{
-				
-			int nextVal = fib.get(firVal) + fib.get(secVal);	
+
+			int nextVal = fib.get(firVal) + fib.get(secVal);
 			fib.add(nextVal);
 			firVal += 1;
 			secVal += 1;
 			count += 1;
-			
-			
-		}	
-		System.out.println(fib);
+
+		}
 		
+		for (int i = 0; i < fib.size(); i += 1)
+		{
+			int numbers = fib.get(i);
+			JOptionPane.showMessageDialog(null, numbers);
+		}
 	}
 	
 	public boolean validInt(String maybeInt)
