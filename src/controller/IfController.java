@@ -159,7 +159,7 @@ public class IfController
 		boolean gameOver = false;
 		while ((guesses <= TRIES) && (!gameOver))
 		{
-			String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled " + dice);
+			String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled ");
 			while (!validInt(userInput))
 			{
 				userInput = JOptionPane.showInputDialog(null, "Enter a whole number between one and six.");
@@ -201,9 +201,7 @@ public class IfController
 	{
 		ArrayList<Integer> fib = new ArrayList<Integer>();
 		fib.add(0);
-		fib.add(33);
-		fib.add(1);
-		fib.remove(1);
+		fib.add(1);;
 
 		int firVal = 0;
 		int secVal = 1;
