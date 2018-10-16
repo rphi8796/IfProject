@@ -39,6 +39,10 @@ public class IfController
 			usefulQuestions();
 		}
 		
+		diceGame();
+		
+		createArrayList();
+		
 		
 	}
 	
@@ -149,50 +153,39 @@ public class IfController
 	 */
 	public void diceGame()
 	{
-		boolean playAgain = true;
-		String playAgainInput = JOptionPane.showInputDialog(null, "Would you like to try and guess what a dice roll was equal to? " + "(Hint: answer with yes or no. Any other answer assumes no");
-		if (playAgainInput.equals("Yes") || playAgainInput.equals("yes"))
+		final int TRIES = 2;
+		int dice = (int) (Math.random() * 6 + 1);
+		int guesses = 0;
+		boolean gameOver = false;
+		while ((guesses <= TRIES) && (!gameOver))
 		{
-			playAgain = true;
-		}
-		else
-		{
-			playAgain = false;
-		}
-
-		while (playAgain)
-		{
-			final int TRIES = 2;
-			int dice = (int) (Math.random() * 6 + 1);
-			int i = 1;
-			while ((i <= TRIES))
+			String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled " + dice);
+			while (!validInt(userInput))
 			{
-				String userInput = JOptionPane.showInputDialog(null, "Guess what number the dice rolled " + dice);
-				// make sure this doesn't count as a guess
-				while (!validInt(userInput))
-				{
-					userInput = JOptionPane.showInputDialog(null, "Enter a whole number between one and six." );
-				}
-
-				if (validInt(userInput))
-				{
-					int guess = Integer.parseInt(userInput);
-					if (guess == dice)
-					{
-						JOptionPane.showMessageDialog(null, "You are correct the dice rolled a " + dice);
-						
-					}
-					else if ((guess != dice) || (i <= TRIES))
-					{
-						JOptionPane.showMessageDialog(null, "That guess wasn't correct but guess again");
-					}
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Nice try");
-					}
-				}
-				i += 1;
+				userInput = JOptionPane.showInputDialog(null, "Enter a whole number between one and six.");
 			}
+
+			if (validInt(userInput))
+			{
+				int guess = Integer.parseInt(userInput);
+				if (guess == dice)
+				{
+					JOptionPane.showMessageDialog(null, "You are correct the dice rolled a " + dice);
+					gameOver = true;
+
+				}
+				else if ((guess != dice) && (guesses < TRIES))
+				{
+					JOptionPane.showMessageDialog(null, "That guess wasn't correct but guess again");
+					guesses += 1;
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Better luck next time");
+					gameOver = true;
+				}
+			}
+
 		}
 	}
 	
@@ -212,10 +205,9 @@ public class IfController
 		fib.add(1);
 		fib.remove(1);
 
-		int count = 0;
 		int firVal = 0;
 		int secVal = 1;
-		while (count < 30)
+		for (int count = 0; count < 20; count +=1)
 		{
 			int nextVal = fib.get(firVal) + fib.get(secVal);
 			fib.add(nextVal);
