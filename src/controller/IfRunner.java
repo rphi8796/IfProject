@@ -7,5 +7,4 @@ public class IfRunner
 		IfController app = new IfController();
 		app.start();
 	}
-	
 }

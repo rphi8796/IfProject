@@ -9,6 +9,9 @@ public class WaterBottle
 	private String insulated;
 	
 	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
+	
 	/**
 	 * Default constructor for a Run.
 	 * Initializes all values to valid but "bad" values
@@ -22,6 +25,10 @@ public class WaterBottle
 		this.fluidOz = 40;
 		this.insulated = "";
 	}
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
 	
 	/**
 	 * This constructor initializes a run instance with a value for the distance.
@@ -40,6 +47,10 @@ public class WaterBottle
 		this.insulated = insulated;
 		
 	}
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\	
+	
 	
 	public String getColor()
 	{
@@ -66,6 +77,10 @@ public class WaterBottle
 		return insulated;
 	}
 	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\	
+	
+	
 	public void setColor(String color)
 	{
 		this.color = color;
@@ -90,6 +105,10 @@ public class WaterBottle
 	{
 		this.insulated = insulated;
 	}
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
 	
 	public String toString()
 	{

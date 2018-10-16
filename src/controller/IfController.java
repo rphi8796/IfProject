@@ -8,22 +8,27 @@ public class IfController
 {
 	//private WaterBottle hydroFlask;
 	private WaterBottle userWaterBottle;
-
-	
-	
 	/**
 	 * Builds of the Controller
 	 */
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\	
+	
+	
 	public IfController()
 	{
 		//hydroFlask = new WaterBottle("Grey", "Straw", "Metal", 40, true);
 		userWaterBottle = new WaterBottle();
 	}
 	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
+	
 	/**
 	 * This is where the program starts calling methods to run the program.
 	 */
-	
 	public void start()
 	{
 	
@@ -38,6 +43,10 @@ public class IfController
 	}
 	
 	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
+	
+	
 	/**
 	 * This method will ask the user a useless question until
 	 * the user does not enter yes
@@ -48,7 +57,7 @@ public class IfController
 		while (answer)
 		{
 			String userInput = JOptionPane.showInputDialog(null, "Would you like an annoying pop up to ask you useless questions?");
-			if (userInput.equals("Yes") || userInput.equals("yes"))
+			if (userInput.equalsIgnoreCase("Yes"))
 			{
 				answer = true;
 			}
@@ -58,6 +67,9 @@ public class IfController
 			}
 		}
 	}	
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\	
 	
 	
 	/**
@@ -101,11 +113,6 @@ public class IfController
 		JOptionPane.showMessageDialog(null, "Your water bottle holds " + userWaterBottle.getFluidOz() + " fluid ounces");
 		
 		
-		
-		
-		//boolean insulated = true;
-		//insulated = Boolean.parseBoolean(userInput2);
-		//userWaterBottle.setinsulated(insulated);
 		boolean insulatedTest = true;
 		while(insulatedTest)
 		{
@@ -129,6 +136,9 @@ public class IfController
 			}
 		}
 	}
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
 	
 	
 	/**
@@ -187,6 +197,9 @@ public class IfController
 	}
 	
 	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
+	
 	/**
 	 * This will print the fibonacci sequence but I am still trying
 	 * to get the text to wrap
@@ -202,9 +215,8 @@ public class IfController
 		int count = 0;
 		int firVal = 0;
 		int secVal = 1;
-		while (count < 10)
+		while (count < 30)
 		{
-
 			int nextVal = fib.get(firVal) + fib.get(secVal);
 			fib.add(nextVal);
 			firVal += 1;
@@ -213,12 +225,12 @@ public class IfController
 
 		}
 		
-		for (int i = 0; i < fib.size(); i += 1)
-		{
-			int numbers = fib.get(i);
-			JOptionPane.showMessageDialog(null, numbers);
-		}
+		JOptionPane.showMessageDialog(null, "This is the sequence" + (fib));
 	}
+	
+	
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\\
+	
 	
 	public boolean validInt(String maybeInt)
 	{
